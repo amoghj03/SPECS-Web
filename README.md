@@ -37,6 +37,10 @@ All plans and sketches are illustrative SVG studies, not drawings of the stock-p
 
 Deploy the generated `dist` directory to a static host. BrowserRouter needs all non-asset routes rewritten to `/index.html`; `public/_redirects` provides this for hosts supporting Netlify-style redirects. For other hosts, configure the equivalent SPA fallback.
 
+### GitHub Pages
+
+Pushing to `main` runs the included GitHub Actions workflow and publishes the site to GitHub Pages. In the repository, open **Settings → Pages**, choose **GitHub Actions** as the source, then push the workflow commit. The project site will be available at `https://amoghj03.github.io/SPECS-Web/` once the action completes. The production build uses the required `/SPECS-Web/` asset base and creates `404.html` so direct links to client-side routes render correctly on Pages.
+
 ## Verification
 
 ```sh
