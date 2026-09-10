@@ -1,0 +1,203 @@
+/* Each project category has its own mosaic rhythm; list view stays linear. */
+.projects-grid.projects-mosaic {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: clamp(160px, 12vw, 180px);
+  gap: 20px;
+}
+.projects-mosaic .mosaic-tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  background: var(--green);
+  color: white;
+  grid-column: span 4;
+  grid-row: span 2;
+}
+.projects-mosaic .mosaic-tile:nth-child(6n + 1) { grid-column: span 5; }
+.projects-mosaic .mosaic-tile:nth-child(6n + 2) { grid-column: span 3; }
+.projects-mosaic .mosaic-tile:nth-child(6n + 5),
+.projects-mosaic .mosaic-tile:nth-child(6n + 6) {
+  grid-column: span 8;
+  grid-row: span 1;
+}
+@media (min-width: 1001px) {
+  .projects-mosaic[data-category="all"] .mosaic-tile:nth-child(12n + 7) { grid-column: span 3; }
+  .projects-mosaic[data-category="all"] .mosaic-tile:nth-child(12n + 8) { grid-column: span 5; }
+  .projects-mosaic[data-category="all"] .mosaic-tile:nth-child(12n + 10) { grid-column: span 7; }
+  .projects-mosaic[data-category="all"] .mosaic-tile:nth-child(12n + 11),
+  .projects-mosaic[data-category="all"] .mosaic-tile:nth-child(12n + 12) { grid-column: span 5; }
+
+  .projects-mosaic[data-category="residential"] .mosaic-tile:nth-child(n) { grid-column: span 4; grid-row: span 2; }
+  .projects-mosaic[data-category="residential"] .mosaic-tile:nth-child(5n + 1) { grid-column: span 7; }
+  .projects-mosaic[data-category="residential"] .mosaic-tile:nth-child(5n + 2) { grid-column: span 5; }
+
+  .projects-mosaic[data-category="commercial"] .mosaic-tile:nth-child(n) { grid-column: span 6; grid-row: span 2; }
+  .projects-mosaic[data-category="commercial"] .mosaic-tile:nth-child(5n + 1) { grid-column: span 4; }
+  .projects-mosaic[data-category="commercial"] .mosaic-tile:nth-child(5n + 2),
+  .projects-mosaic[data-category="commercial"] .mosaic-tile:nth-child(5n + 3) { grid-column: span 8; grid-row: span 1; }
+
+  .projects-mosaic[data-category="cultural"] .mosaic-tile:nth-child(n) { grid-row: span 2; }
+  .projects-mosaic[data-category="cultural"] .mosaic-tile:nth-child(4n + 1) { grid-column: span 8; }
+  .projects-mosaic[data-category="cultural"] .mosaic-tile:nth-child(4n + 2) { grid-column: span 4; }
+  .projects-mosaic[data-category="cultural"] .mosaic-tile:nth-child(4n + 3) { grid-column: span 5; }
+  .projects-mosaic[data-category="cultural"] .mosaic-tile:nth-child(4n + 4) { grid-column: span 7; }
+
+  .projects-mosaic[data-category="institutional"] .mosaic-tile:nth-child(n) { grid-column: span 6; grid-row: span 1; }
+  .projects-mosaic[data-category="institutional"] .mosaic-tile:nth-child(4n + 1) { grid-row: span 2; }
+  .projects-mosaic[data-category="institutional"] .mosaic-tile:nth-child(4n + 4) { grid-column: span 12; grid-row: span 2; }
+
+  /* Search results remain balanced when fewer than one complete pattern match. */
+  .projects-mosaic[data-count="1"] .mosaic-tile:nth-child(n) { grid-column: span 12; grid-row: span 2; }
+  .projects-mosaic[data-count="2"] .mosaic-tile:nth-child(n) { grid-column: span 6; grid-row: span 2; }
+  .projects-mosaic[data-count="3"] .mosaic-tile:nth-child(n) { grid-column: span 4; grid-row: span 2; }
+}
+.mosaic-tile > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mosaic-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(10 28 22 / 24%) 0%, transparent 30%, rgb(10 28 22 / 85%) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.mosaic-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(10 28 22 / 35%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 300ms;
+  pointer-events: none;
+}
+.mosaic-category {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  z-index: 2;
+  font-size: 11px;
+  padding: 4px 9px;
+  background: rgb(10 28 22 / 65%);
+}
+.mosaic-open {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  color: var(--green);
+  border-radius: 50%;
+  z-index: 2;
+  transition: transform 300ms, background 300ms;
+}
+.mosaic-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+}
+.mosaic-caption h2 {
+  font-size: clamp(21px, 2.1vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.mosaic-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 350ms cubic-bezier(0.16, 1, 0.3, 1), margin 350ms, opacity 250ms;
+}
+.mosaic-facts > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.mosaic-facts dt {
+  font-size: 10px;
+  color: #d0ddcf;
+  min-width: 46px;
+}
+.mosaic-facts dd {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+.mosaic-tile:is(:hover, :focus-visible) > img { transform: scale(1.045); }
+.mosaic-tile:is(:hover, :focus-visible)::before { opacity: 1; }
+.mosaic-tile:is(:hover, :focus-visible) .mosaic-open { transform: rotate(45deg); }
+.mosaic-tile:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+.mosaic-tile:is(:hover, :focus-visible) .mosaic-facts {
+  margin-top: 12px;
+  max-height: 130px;
+  opacity: 1;
+}
+@media (max-width: 1000px) {
+  .projects-grid.projects-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+  .projects-mosaic .mosaic-tile:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 0.95;
+  }
+  .projects-mosaic .mosaic-tile:nth-child(3n + 1) {
+    grid-column: span 2;
+    aspect-ratio: 1.8;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .mosaic-tile .mosaic-facts {
+    margin-top: 12px;
+    max-height: 130px;
+    opacity: 1;
+  }
+  .mosaic-tile::before { opacity: 1; }
+}
+@media (max-width: 600px) {
+  .projects-grid.projects-mosaic {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .projects-mosaic .mosaic-tile:nth-child(n) {
+    grid-column: span 1;
+    aspect-ratio: 1.05;
+  }
+  .mosaic-category { top: 20px; left: 20px; }
+  .mosaic-caption { left: 20px; right: 20px; bottom: 20px; }
+  .mosaic-caption h2 { font-size: 26px; }
+  .mosaic-tile .mosaic-facts {
+    margin-top: 12px;
+    max-height: 130px;
+    opacity: 1;
+  }
+  .mosaic-tile::before { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mosaic-tile,
+  .mosaic-tile > img,
+  .mosaic-tile::before,
+  .mosaic-tile .mosaic-open,
+  .mosaic-tile .mosaic-facts { transition: none; }
+  .mosaic-tile:is(:hover, :focus-visible) > img,
+  .mosaic-tile:is(:hover, :focus-visible) .mosaic-open { transform: none; }
+}

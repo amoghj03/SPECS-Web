@@ -1,0 +1,203 @@
+.landing-shell {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.landing-shell main {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.landing-shell .site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  color: white;
+  background: transparent;
+}
+
+.landing-shell .site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -70px;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(10 28 19 / 80%), transparent);
+  pointer-events: none;
+}
+
+.landing-shell .brand-dot {
+  color: white;
+}
+
+.landing-shell .brand-description {
+  border-color: rgb(255 255 255 / 40%);
+}
+
+.landing-shell .nav a::after {
+  background: currentColor;
+}
+
+.landing-shell .site-header :focus-visible {
+  outline-color: white;
+}
+
+.landing-shell .menu-toggle:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+.landing-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--green);
+  touch-action: pan-y pinch-zoom;
+}
+
+.landing-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landing-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.landing-slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--slide-position, center);
+  transform: scale(var(--slide-zoom-from, 1.04));
+}
+
+.landing-carousel[data-ready="true"] .landing-slide.is-active img,
+.landing-carousel[data-ready="true"] .landing-slide.is-previous img {
+  animation: architectural-drift 7.5s linear both;
+}
+
+.landing-carousel[data-playing="false"] .landing-slide img {
+  animation-play-state: paused;
+}
+
+.landing-playback {
+  margin-left: 4px;
+}
+
+@keyframes architectural-drift {
+  from {
+    transform: scale(var(--slide-zoom-from, 1.04));
+  }
+  to {
+    transform: scale(var(--slide-zoom-to, 1.01));
+  }
+}
+
+.landing-slide:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: -8px;
+}
+
+.landing-controls {
+  position: absolute;
+  left: 50%;
+  bottom: max(4px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 7px;
+  border-radius: 24px;
+  background: rgb(16 39 30 / 76%);
+  color: white;
+}
+
+.landing-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.landing-controls button:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+.landing-controls svg {
+  filter: drop-shadow(0 1px 3px rgb(0 0 0 / 75%));
+}
+
+.landing-dot:hover span {
+  background: white;
+}
+
+.landing-controls button:focus-visible {
+  outline-color: white;
+  outline-offset: 0;
+}
+
+.landing-dot span {
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 75%);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 75%);
+}
+
+.landing-dot[aria-pressed="true"] span {
+  width: 18px;
+  background: white;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .landing-slide img {
+    object-position: var(--slide-mobile-position, center);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-shell .nav {
+    background: var(--green);
+    border-color: rgb(255 255 255 / 20%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-slide {
+    transition: none;
+  }
+  .landing-carousel .landing-slide img {
+    animation: none;
+    transform: none;
+  }
+}

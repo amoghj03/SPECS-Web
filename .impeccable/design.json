@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T18:25:04.715Z",
+  "title": "Design System: SPECS",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Forest Green",
+        "tonalRamp": [
+          "oklch(15% 0.055 164)",
+          "oklch(27% 0.055 164)",
+          "oklch(39% 0.055 164)",
+          "oklch(51% 0.055 164)",
+          "oklch(63% 0.055 164)",
+          "oklch(75% 0.055 164)",
+          "oklch(87% 0.055 164)",
+          "oklch(95% 0.055 164)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Forest Ink",
+        "tonalRamp": [
+          "oklch(15% 0.043 170)",
+          "oklch(27% 0.043 170)",
+          "oklch(39% 0.043 170)",
+          "oklch(51% 0.043 170)",
+          "oklch(63% 0.043 170)",
+          "oklch(75% 0.043 170)",
+          "oklch(87% 0.043 170)",
+          "oklch(95% 0.043 170)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Sage Gray",
+        "tonalRamp": [
+          "oklch(15% 0.02 153)",
+          "oklch(27% 0.02 153)",
+          "oklch(39% 0.02 153)",
+          "oklch(51% 0.02 153)",
+          "oklch(63% 0.02 153)",
+          "oklch(75% 0.02 153)",
+          "oklch(87% 0.02 153)",
+          "oklch(95% 0.02 153)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Mineral Rule",
+        "tonalRamp": [
+          "oklch(15% 0.012 145)",
+          "oklch(27% 0.012 145)",
+          "oklch(39% 0.012 145)",
+          "oklch(51% 0.012 145)",
+          "oklch(63% 0.012 145)",
+          "oklch(75% 0.012 145)",
+          "oklch(87% 0.012 145)",
+          "oklch(95% 0.012 145)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chalk Paper",
+        "tonalRamp": [
+          "oklch(15% 0.006 115)",
+          "oklch(27% 0.006 115)",
+          "oklch(39% 0.006 115)",
+          "oklch(51% 0.006 115)",
+          "oklch(63% 0.006 115)",
+          "oklch(75% 0.006 115)",
+          "oklch(87% 0.006 115)",
+          "oklch(95% 0.006 115)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft Sage",
+        "tonalRamp": [
+          "oklch(15% 0.014 125)",
+          "oklch(27% 0.014 125)",
+          "oklch(39% 0.014 125)",
+          "oklch(51% 0.014 125)",
+          "oklch(63% 0.014 125)",
+          "oklch(75% 0.014 125)",
+          "oklch(87% 0.014 125)",
+          "oklch(95% 0.014 125)"
+        ]
+      },
+      "footer": {
+        "role": "neutral",
+        "displayName": "Pale Leaf",
+        "tonalRamp": [
+          "oklch(15% 0.018 128)",
+          "oklch(27% 0.018 128)",
+          "oklch(39% 0.018 128)",
+          "oklch(51% 0.018 128)",
+          "oklch(63% 0.018 128)",
+          "oklch(75% 0.018 128)",
+          "oklch(87% 0.018 128)",
+          "oklch(95% 0.018 128)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Hover Green",
+        "tonalRamp": [
+          "oklch(15% 0.065 161)",
+          "oklch(27% 0.065 161)",
+          "oklch(39% 0.065 161)",
+          "oklch(51% 0.065 161)",
+          "oklch(63% 0.065 161)",
+          "oklch(75% 0.065 161)",
+          "oklch(87% 0.065 161)",
+          "oklch(95% 0.065 161)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Leaf",
+        "tonalRamp": [
+          "oklch(15% 0.11 135)",
+          "oklch(27% 0.11 135)",
+          "oklch(39% 0.11 135)",
+          "oklch(51% 0.11 135)",
+          "oklch(63% 0.11 135)",
+          "oklch(75% 0.11 135)",
+          "oklch(87% 0.11 135)",
+          "oklch(95% 0.11 135)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Architectural Display",
+        "purpose": "Large home statement; interior headings use the related page-heading scale."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Main sectional introductions."
+      },
+      "body": {
+        "displayName": "Studio Prose",
+        "purpose": "Practice and project narrative at 14px; journal prose uses 15px."
+      },
+      "label": {
+        "displayName": "Catalogue Label",
+        "purpose": "Section names, filters and compact supporting labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mobile-navigation",
+        "value": "0 12px 20px #193d3212",
+        "purpose": "Separation below the expanded mobile menu only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "0.2s ease",
+        "purpose": "Control backgrounds, underlines and arrow movement."
+      },
+      {
+        "name": "photo-hover",
+        "value": "0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Scale linked project and journal images to 1.035 on hover."
+      },
+      {
+        "name": "photo-reveal",
+        "value": "0.65s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Reveal featured photographs from clip-path inset(0 0 5% 0) to inset(0)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Disable animation and transition under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1700px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "stacked",
+        "value": "700px"
+      },
+      {
+        "name": "mobile-menu",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled enquiry or reset action with a directional icon.",
+      "html": "<button class=\"ds-primary\">Prepare enquiry<svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary{font-family:Manrope,sans-serif;color:var(--ink,#23473d);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:25px;background:var(--green,#194d40);color:white;border:0;border-radius:0;padding:17px 23px;font-size:12px;min-height:50px;transition:background .2s}.ds-primary:hover{background:#306452}.ds-primary:focus-visible{outline:2px solid #538033;outline-offset:5px}.ds-primary:disabled{opacity:.45;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action used beside a filled button.",
+      "html": "<button class=\"ds-outline\">Open email app<svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-outline{font-family:Manrope,sans-serif;color:var(--ink,#23473d);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:25px;background:transparent;border:1px solid var(--line,#d4dcd4);border-radius:0;padding:17px 23px;font-size:12px;min-height:50px}.ds-outline:hover{background:var(--soft,#e9eee5)}.ds-outline:focus-visible{outline:2px solid #538033;outline-offset:5px}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "button",
+      "description": "Underlined text action for routes and section invitations.",
+      "html": "<a class=\"ds-arrow\" href=\"#projects\">Explore our work<svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-arrow{font-family:Manrope,sans-serif;color:var(--ink,#23473d);cursor:pointer;display:inline-flex;gap:25px;align-items:center;font-size:13px;font-weight:600;border-bottom:1px solid currentColor;padding:9px 0;text-decoration:none;width:fit-content}.ds-arrow svg{transition:transform .2s}.ds-arrow:hover svg{transform:translate(3px,-3px)}.ds-arrow:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-arrow svg{transition:none}}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Circular navigation and view control.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Explore project\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-icon{font-family:Manrope,sans-serif;color:var(--ink,#23473d);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:0;background:transparent;border-radius:50%;transition:background .2s}.ds-icon:hover,.ds-icon[aria-pressed=true]{background:var(--soft,#e9eee5)}.ds-icon:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-icon{transition:none}}"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Persistent label above a transparent, ruled text field.",
+      "html": "<label class=\"ds-label\">Your name <span>*</span><input class=\"ds-input\" placeholder=\"Alex Morgan\" autocomplete=\"name\" required></label>",
+      "css": ".ds-label{display:block;font:11px/1.7 Manrope,sans-serif;color:var(--ink,#23473d);margin-bottom:28px}.ds-label span{color:#5f7656}.ds-input{display:block;width:100%;background:transparent;border:0;border-bottom:1px solid #acbaab;border-radius:0;padding:15px 0;font:12px/1.65 Manrope,sans-serif;color:var(--ink,#23473d);caret-color:var(--green,#194d40)}.ds-input::placeholder{color:#6c786f;opacity:1}.ds-input:focus{border-bottom-color:var(--green,#194d40)}.ds-input:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(max-width:700px){.ds-input{font-size:16px;padding:13px 0}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Text navigation with an active or hovered rule.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#people\">People</a><a class=\"ds-active\" href=\"#projects\" aria-current=\"page\">Projects</a><a href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;gap:45px;font:500 13px Manrope,sans-serif;color:var(--ink,#23473d)}.ds-nav a{position:relative;padding:12px 0;color:inherit;text-decoration:none}.ds-nav a:after{content:\"\";position:absolute;bottom:4px;left:0;right:0;height:1px;background:var(--green,#194d40);transform:scaleX(0);transform-origin:left;transition:transform .2s}.ds-nav a:hover:after,.ds-nav .ds-active:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-nav a:after{transition:none}}"
+    },
+    {
+      "name": "Category Filter",
+      "kind": "chip",
+      "refersTo": "filter",
+      "description": "Unboxed text filters with counts and explicit selected state.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\">All<sup>6</sup></button><button class=\"ds-filter\" aria-pressed=\"false\">Residential<sup>2</sup></button></div>",
+      "css": ".ds-filters{display:flex;gap:26px;flex-wrap:wrap}.ds-filter{font:12px Manrope,sans-serif;color:var(--muted,#647168);padding:12px 0;position:relative;white-space:nowrap;background:transparent;border:0;cursor:pointer}.ds-filter[aria-pressed=true]{color:var(--green,#194d40);font-weight:700}.ds-filter:after{content:\"\";position:absolute;bottom:5px;left:0;right:0;height:1px;background:var(--green,#194d40);transform:scaleX(0);transition:transform .2s}.ds-filter:hover:after,.ds-filter[aria-pressed=true]:after{transform:scaleX(1)}.ds-filter sup{font-size:8px;margin-left:6px;position:relative;top:-2px}.ds-filter:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-filter:after{transition:none}}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Square image aperture and catalogue caption; local photograph URL is supplied by the project asset catalogue.",
+      "html": "<a class=\"ds-card\" href=\"#project\"><div class=\"ds-photo\"><svg class=\"ds-placeholder\" viewBox=\"0 0 400 280\" role=\"img\" aria-label=\"Architectural image placeholder\"><rect width=\"400\" height=\"280\" fill=\"#e9eee5\"/><path d=\"M50 220V100l150-60 150 60v120H50Zm150-180v180M50 100l150 65 150-65\" stroke=\"#647168\" stroke-width=\"2\" fill=\"none\"/></svg><span class=\"ds-card-arrow\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></span></div><div class=\"ds-card-title\"><h2>Sample project</h2><span>2025</span></div><div class=\"ds-card-meta\"><span>Sample location</span><span>Structural design</span></div></a>",
+      "css": ".ds-card{display:block;color:var(--ink,#23473d);text-decoration:none;font-family:Manrope,sans-serif}.ds-photo{position:relative;overflow:hidden;aspect-ratio:1.42;background:var(--soft,#e9eee5)}.ds-placeholder{display:block;width:100%;height:100%;transition:transform .6s cubic-bezier(.16,1,.3,1)}.ds-card:hover .ds-placeholder{transform:scale(1.035)}.ds-card-arrow{position:absolute;bottom:15px;right:15px;background:var(--paper,#f7f8f4);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:background .2s}.ds-card:hover .ds-card-arrow{background:#dbe7c6}.ds-card-title{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0 9px}.ds-card-title h2{margin:0;font-size:24px;font-weight:500;line-height:1.2;letter-spacing:-.035em}.ds-card-title>span,.ds-card-meta{font-size:10px;color:var(--muted,#647168)}.ds-card-meta{display:flex;justify-content:space-between;gap:15px}.ds-card:focus-visible{outline:2px solid #538033;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-placeholder,.ds-card-arrow{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Architectural Exhibition Catalogue",
+    "overview": "Forest green lettering, chalk surfaces, generous image apertures and restrained captions frame the architecture. The interface has an orderly, open character: square photographic compositions, fine rules and circular navigation establish its recurring vocabulary.\n\nThis records the implemented direction in `index.html`, `src/styles.css` and `src/App.jsx`; there is no approved image comp. The sample identity is established by `PRODUCT.md`. Page composition and the user sketch's information architecture remain surface concerns.",
+    "keyCharacteristics": [
+      "Large architectural photography with compact factual captions.",
+      "Locally served Manrope with tightly spaced display headings.",
+      "Flat chalk and green surfaces divided by fine rules.",
+      "Square content frames and circular icon actions."
+    ],
+    "rules": [],
+    "dos": [
+      "Do align new sections to the shared fluid gutter.",
+      "Do use square image frames, fine rules and circular icon actions.",
+      "Do retain visible keyboard focus, descriptive media labels and reduced-motion behavior.",
+      "Do keep sample content and illustrative drawings clearly identified."
+    ],
+    "donts": [
+      "Don't add rounded card shells or resting card shadows to the catalogue.",
+      "Don't introduce a competing editorial font family.",
+      "Don't replace functional captions or image controls with decorative overlays."
+    ]
+  }
+}
