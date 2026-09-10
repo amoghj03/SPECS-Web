@@ -318,4 +318,5 @@ export const studioContact = {
   ],
 };
 
-export const imagePath = (name) => `/images/${name}.jpg`;
+export const imagePath = (name) =>
+  `${import.meta.env.BASE_URL}images/${name}.jpg`;
